@@ -50,8 +50,8 @@ void shellSort(int* array, int size)
     }
 }
 
-//Binary Sort, from Quick Sort
-void midInsertSort(int* arr, int n)
+//Binary Sort, from Insert Sort
+void binarySort(int* arr, int n)
 {
   int left, right, key;
   int mid, j, i;
@@ -148,7 +148,7 @@ int main ()
   printArr(a, 9);
   insertSort(b, 9);
   printArr(b, 9);
-  midInsertSort(c, 9);
+  binarySort(c, 9);
   printArr(c, 9);
   shellSort(d, 9);
   printArr(d, 9);
