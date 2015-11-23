@@ -17,8 +17,41 @@ void swap(int* a, int* b)
   }
 }
 
+// Max Heap
+//i, 2*i + 1, 2*i + 2
+void max_heapify(int arr[], int left, int right) {
+  //parent & child init
+  int parent = left;
+  int child = parent * 2 + 1;
+  while (child < right) {
+    if (child + 1 < right && arr[child] < arr[child + 1]) //
+      child++;
+    if (arr[parent] > arr[child]) 
+      return;
+    else { 
+      swap(&arr[parent], &arr[child]);
+      parent = child;
+      child = parent * 2 + 1;
+    }
+  }
+}
+
+//Heap Sort
+void heapSort(int arr[], int len) {
+  int i;
+  //from last parent 
+  for (i = len / 2 - 1; i >= 0; i--)
+    max_heapify(arr, i, len);
+  //swap 0 & i
+  for (i = len - 1; i > 0; i--) {
+    swap(&arr[0], &arr[i]);
+    max_heapify(arr, 0, i);
+  }
+}
+
+
 //Shell Sort
-void shellSort(int* array, int size)
+void shellSort(int* arr, int size)
 {
   int m = 1;
 
@@ -142,7 +175,7 @@ int main ()
   int b[9]={0,2,1,4,4,0,8,9,3};
   int c[9]={9,8,7,2,4,5,5,0,3};
   int d[9]={2,-1,6,7,1,4,25,0,3};
-
+  int e[9]={3,1,4,4,0,1,9,8,7};
   int n, arr[n];
   bubbleSort(a, 9);
   printArr(a, 9);
@@ -152,6 +185,8 @@ int main ()
   printArr(c, 9);
   shellSort(d, 9);
   printArr(d, 9);
+  heapSort(e, 9);
+  printArr(e, 9);
   printf ("Enter number of arrays:");
   scanf("%d", &n);
   printf ("Enter %d integers\n", n);
