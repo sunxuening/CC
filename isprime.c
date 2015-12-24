@@ -57,8 +57,8 @@ int* sieve4primes(int n)
   int i, j;
   for(i = 0; i < n; i++)
     *(arr + i) = 1;
-  *arr = *(arr + 1) = 0;
-  int count = 2;// 0, 1 is not
+  int count = 2;
+  *arr = *(arr + 1) = 0;// 0, 1 is not prime.
   for(i = 2 ; i*i <= n; i++)
     if(arr[i])
       for(j = i + i ; j <= n ; j += i){
