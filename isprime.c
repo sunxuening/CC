@@ -1,3 +1,9 @@
+/**
+ * About Prime.
+ *
+ * @author Xuening Sun
+ *
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
