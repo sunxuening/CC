@@ -1,0 +1,7 @@
+#
+# Filename : configure
+#
+
+#!/bin/sh
+
+make
