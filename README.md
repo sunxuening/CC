@@ -1,3 +1,3 @@
 # CC
-hello.
+Best Wish.\n
 This sentence from terminal of sunxuening mac pro.
